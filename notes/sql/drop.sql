@@ -1,0 +1,5 @@
+DROP TABLE Loan;
+DROP TABLE Book;
+DROP TABLE Borrower;
+DROP TABLE Publisher;
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <!--for files in the static folder-->
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        <title>Links</title>
+    </head>
+    <body>
+        <!--put the name of the python function into url for-->
+        <a href="{{url_for('hello')}}">Hello World</a>
+        <!--variable urls-->
+        <a href="{{url_for('year', year='2024')}}">Year</a>
+    </body>
+</html>

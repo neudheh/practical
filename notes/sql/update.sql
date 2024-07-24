@@ -1,0 +1,1 @@
+UPDATE LOAN SET BorrowerID = 1 WHERE BorrowerID = 2;

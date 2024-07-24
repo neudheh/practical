@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Class List</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>
+                    Index No.
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                </th>
+            </tr>
+            {%for record in classlist%}
+            <tr>
+                {%for data in record%}
+                <td>{{data}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

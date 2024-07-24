@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <title>Score Check</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="{{url_for('index')}}" method="post">
+            <label for="score">Please enter your score: </label>
+            <input type="number" name="score" id="score">
+            <button type="submit">Submit</button>
+        </form>
+        {%if score%}
+            {%if score < 50%}
+                <p>You scored {{score}}%, you failed  :&#40;</p>
+            {%else%}
+                <p>You scored {{score}}%, you passed!  :D</p>
+            {%endif%}
+        {%endif%}
+    </body>
+</html>
