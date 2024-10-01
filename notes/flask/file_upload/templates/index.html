@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>	
+		<meta charset="utf-8">
+		<title>neudheh's CDN</title>
+	</head>
+	<body>
+		<form action="{{url_for('index')}}" method="post" enctype="multipart/form-data">
+			<label for="image">Image: </label>
+			<input type="file" name="image" id="image">
+			<button type="submit">Submit</button>
+		</form>
+		{% if images != [] %}
+		<table>
+			<tr>
+				<th>Image</th>
+				<th>URL</th>
+			</tr>
+			{% for image in images %}
+			<tr>
+				<td>
+					{% if image.split('.')[-1] == "mp4" %}
+					<video width="240" controls autoplay loop>
+						<source src="/uploads/{{image}}" type="video/{{image.split('.')[-1]}}">
+					</video>
+					{% else %}
+					<img src="/uploads/{{image}}" width="240">
+					{% endif %}
+				</td>
+				<td>
+					<a href="/uploads/{{image}}">URL</a>
+				</td>
+			<tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</body>
+</html>
